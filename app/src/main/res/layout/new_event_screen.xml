@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <org.lucasr.twowayview.TwoWayView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="152dp"
+            android:background="@color/image_gallery"
+            android:orientation="horizontal"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/button_load_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list"
+            android:layout_margin="5dp"
+            android:text="@string/load_image" />
+
+        <Button
+            android:id="@+id/button_take_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/button_load_photo"
+            android:text="@string/take_photo" />
+
+        <RelativeLayout
+            android:id="@+id/weather_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_load_photo">
+
+            <TextView
+                android:id="@+id/weather_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/weather_data"
+                android:layout_margin="5dp"
+                android:onClick="weatherPick"
+                android:text="@string/custom_weather" />
+
+            <Button
+                android:id="@+id/fetch_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weather_data"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/button_weather"
+                android:onClick="getWeather"
+                android:padding="5dp"
+                android:text="@string/get_weather" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/place_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weather_layout"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:text="@string/place"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/place_choose_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/place_text">
+
+            <Spinner
+                android:id="@+id/item_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp" />
+
+            <Button
+                android:id="@+id/new_place"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="0.3"
+                android:onClick="addNewPlace"
+                android:padding="5dp"
+                android:text="@string/nnew" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/place_choose_layout"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:text="@string/time"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/exact_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/place_choose_layout"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/time_text"
+            android:padding="5dp"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/time_set_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_text">
+
+            <Button
+                android:id="@+id/button_set_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/set_date" />
+
+            <Button
+                android:id="@+id/button_set_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/set_time" />
+        </LinearLayout>
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_set_layout"
+            android:layout_marginTop="5dp"
+            android:numStars="5"
+            android:stepSize="0.5" />
+
+    </RelativeLayout>
+</ScrollView>

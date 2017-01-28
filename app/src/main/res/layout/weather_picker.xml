@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="14"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/top_picker"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/center_top"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_centerHorizontal="true" />
+
+            <RelativeLayout
+                android:id="@+id/pressure_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/center_top">
+
+                <TextView
+                    android:id="@+id/pressure_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/pressure" />
+
+                <NumberPicker
+                    android:id="@+id/pressure_picker"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/pressure_text"
+                    android:layout_margin="5dp"
+                    android:padding="5dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/temperature_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/center_top">
+
+                <TextView
+                    android:id="@+id/temperature_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/temperature" />
+
+                <com.svet.omsk.onfishing.MyNumberPicker
+                    android:id="@+id/temperature_picker"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/temperature_text"
+                    android:layout_margin="5dp"
+                    android:padding="5dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_picker"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/center_bottom"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_centerHorizontal="true" />
+
+            <RelativeLayout
+                android:id="@+id/wind_speed_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/center_bottom">
+
+                <TextView
+                    android:id="@+id/wind_speed_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/wind_speed" />
+
+                <NumberPicker
+                    android:id="@+id/wind_picker"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/wind_speed_text"
+                    android:layout_margin="5dp"
+                    android:padding="5dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/wind_direction_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/center_bottom">
+
+                <TextView
+                    android:id="@+id/wind_dir_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/wind_direction" />
+
+                <Spinner
+                    android:id="@+id/wind_dir_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/wind_dir_text"
+                    android:layout_margin="5dp"
+                    android:padding="5dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/weather_pick_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="pickWeather"
+            android:text="@string/ok" />
+    </RelativeLayout>
+</LinearLayout>
